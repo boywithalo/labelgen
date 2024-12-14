@@ -75,7 +75,7 @@
     </select><br><br>
 
     <label for="code">Code:</label>
-    <input type="text" id="code" placeholder="000000" oninput="updateCanvas()"  maxlength="6" style="width:92px; margin-right:30px"/>
+    <input type="text" id="code" placeholder="000000" oninput="updateCanvas()"  maxlength="10" style="width:92px; margin-right:30px"/>
 
     <label for="date">Date:</label>
     <input type="text" id="date"  oninput="updateCanvas()" value="Dec13, 2024 22:01" style="margin-right:30px"/>
@@ -94,7 +94,7 @@
     <input type="text" id="barcodeText" placeholder="000000000000" oninput="updateCanvas()" value="" maxlength="12" style="width: 185px;"/><br><br>
 
     <button onclick="downloadImage()">Download Image</button>
-    
+    <button onclick="printCanvas()">Print</button>
     <br><br>
     <canvas id="canvas" width="945" height="472" style="border-radius: 15px; border: 5px black solid;"></canvas>
 
@@ -203,8 +203,8 @@
             const code = document.getElementById("code").value; // Fixed 'id'
             const scode = `${code}`; // Updated label to display Kg
             ctx.font = "800 60px OpenSauceSB";
-            ctx.textAlign = "left";
-            ctx.fillText(scode, 585, 280); // Adjust position as needed
+            ctx.textAlign = "right";
+            ctx.fillText(scode, 810, 280); // Adjust position as needed
 
             const date = document.getElementById("date").value; // Fixed 'id'
             const datr = `${date}`; // Updated label to display Kg
@@ -227,6 +227,12 @@
             
             link.click();
         }
+        
+        
+        
     </script>
+    <script src="script.js"></script>
+
+    
 </body>
 </html>
